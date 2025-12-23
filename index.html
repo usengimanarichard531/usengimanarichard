@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richard Usengimana - Mathematician & Full Stack Developer</title>
+    <title>Richard USENGIMANA - Data Scientist & Machine Learning Researcher</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#3B82F6',
+                        'primary': '#2563EB',
                         'secondary': '#1E40AF',
-                        'accent': '#F59E0B'
+                        'accent': '#F59E0B',
+                        'research': '#7C3AED'
                     }
                 }
             }
@@ -20,26 +21,20 @@
     </script>
     <style>
         .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #312e81 50%, #1e293b 100%);
         }
         .card-hover {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .skill-tag {
-            transition: all 0.3s ease;
-        }
-        .skill-tag:hover {
-            transform: scale(1.05);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
         .fade-in {
-            animation: fadeIn 0.8s ease-in;
+            animation: fadeIn 1s ease-in;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
         .typing::after {
@@ -51,18 +46,11 @@
             51%, 100% { opacity: 0; }
         }
         .float {
-            animation: float 3s ease-in-out infinite;
+            animation: float 4s ease-in-out infinite;
         }
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        .pulse-slow {
-            animation: pulse-slow 3s infinite;
-        }
-        @keyframes pulse-slow {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            50% { transform: translateY(-15px); }
         }
         .slide-in-left {
             animation: slideInLeft 1s ease-out;
@@ -74,47 +62,29 @@
             animation: slideInUp 1s ease-out;
         }
         @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
+            from { opacity: 0; transform: translateX(-60px); }
             to { opacity: 1; transform: translateX(0); }
         }
         @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(50px); }
+            from { opacity: 0; transform: translateX(60px); }
             to { opacity: 1; transform: translateX(0); }
         }
         @keyframes slideInUp {
-            from { opacity: 0; transform: translateY(50px); }
+            from { opacity: 0; transform: translateY(60px); }
             to { opacity: 1; transform: translateY(0); }
         }
         .bg-animated {
-            background: linear-gradient(-45deg, #667eea, #764ba2, #667eea, #764ba2);
+            background: linear-gradient(-45deg, #1e3a8a, #312e81, #1e293b, #0f172a);
             background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            animation: gradientShift 20s ease infinite;
         }
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        .skill-progress {
-            position: relative;
-            overflow: hidden;
-        }
-        .skill-progress::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            animation: shimmer 2s infinite;
-        }
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
         .interactive-card {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
@@ -125,18 +95,18 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: left 0.6s;
         }
         .interactive-card:hover::before {
             left: 100%;
         }
         .interactive-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
         }
         .bounce-in {
-            animation: bounceIn 1s ease-out;
+            animation: bounceIn 1.2s ease-out;
         }
         @keyframes bounceIn {
             0% { opacity: 0; transform: scale(0.3); }
@@ -144,20 +114,40 @@
             70% { transform: scale(0.9); }
             100% { opacity: 1; transform: scale(1); }
         }
+        .research-badge {
+            background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+            transition: all 0.3s ease;
+        }
+        .research-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.4);
+        }
+        .skill-badge {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        .skill-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.2);
+        }
+        .academic-section {
+            background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm shadow-lg z-50">
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <div class="text-2xl font-bold text-primary">Richard USENGIMANA</div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-primary transition-colors">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
-                    <a href="#skills" class="text-gray-700 hover:text-primary transition-colors">Skills</a>
-                    <a href="#education" class="text-gray-700 hover:text-primary transition-colors">Education</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+                    <a href="#home" class="text-gray-700 hover:text-primary transition-colors font-medium">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors font-medium">About</a>
+                    <a href="#research" class="text-gray-700 hover:text-primary transition-colors font-medium">Research</a>
+                    <a href="#skills" class="text-gray-700 hover:text-primary transition-colors font-medium">Skills</a>
+                    <a href="#education" class="text-gray-700 hover:text-primary transition-colors font-medium">Education</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-medium">Contact</a>
                 </div>
                 <button class="md:hidden" onclick="toggleMenu()">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,103 +159,113 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="bg-animated min-h-screen flex items-center justify-center text-white relative overflow-hidden p-10">
-        <div class="absolute inset-0 bg-black opacity-10"></div>
-        <div class="max-w-4xl mx-auto text-center px-4 fade-in relative z-10">
-            <div class="mb-6">
-                <div class="w-48 h-48 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm shadow-lg">
-  <img src="me...jpg" alt="Me" class="w-44 h-44 rounded-full object-cover">
-</div>
-
+    <section id="home" class="bg-animated min-h-screen flex items-center justify-center text-white relative overflow-hidden pt-20 pb-10 px-4">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40"></div>
+        <div class="max-w-5xl mx-auto text-center px-4 fade-in relative z-10">
+            <div class="mb-8">
+                <div class="w-52 h-52 mx-auto mb-8 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm shadow-2xl border-4 border-white/20 float">
+                    <img src="me.jpg" alt="Rich" class="w-48 h-48 rounded-full object-cover">
+                </div>
             </div>
             <h1 class="text-5xl md:text-7xl font-bold mb-6 slide-in-left">
                 Richard <span class="text-accent">USENGIMANA</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-8 typing slide-in-right" id="typing-text">Mathematician & Full Stack Developer</p>
-            <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90 slide-in-up">
-                Passionate about solving complex problems through mathematics and technology. 
-                Specializing in data analysis, web development, and mathematical modeling.
+            <p class="text-2xl md:text-3xl mb-4 font-semibold slide-in-right">
+                Data Scientist & Machine Learning Researcher
+            </p>
+            <p class="text-xl md:text-2xl mb-8 text-blue-200 italic slide-in-up">
+                "Turning data into insight through mathematics, statistics, and machine learning."
+            </p>
+            <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto opacity-95 leading-relaxed slide-in-up">
+                Building bridges between mathematical theory and real-world impact through research-driven machine learning, 
+                statistical thinking, and data-driven innovation for emerging economies and global challenges.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center bounce-in">
-                <a href="#about" class="bg-accent hover:bg-yellow-600 text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-110 hover:rotate-2">
-                    Learn More
+                <a href="#research" class="bg-accent hover:bg-yellow-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-110 shadow-lg">
+                    View Research
                 </a>
-                <a href="#contact" class="border-2 border-white hover:bg-white hover:text-purple-700 px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-110 hover:-rotate-2">
-                    Get In Touch
+                <a href="#contact" class="border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-110 shadow-lg">
+                    Let's Connect
                 </a>
             </div>
         </div>
         
         <!-- Floating particles -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full opacity-30 float" style="animation-delay: 0s;"></div>
-            <div class="absolute top-1/3 right-1/4 w-3 h-3 bg-accent rounded-full opacity-40 float" style="animation-delay: 1s;"></div>
-            <div class="absolute bottom-1/4 left-1/3 w-2 h-2 bg-white rounded-full opacity-20 float" style="animation-delay: 2s;"></div>
-            <div class="absolute bottom-1/3 right-1/3 w-4 h-4 bg-primary rounded-full opacity-30 float" style="animation-delay: 0.5s;"></div>
+            <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-white rounded-full opacity-40 float" style="animation-delay: 0s;"></div>
+            <div class="absolute top-1/3 right-1/4 w-4 h-4 bg-accent rounded-full opacity-50 float" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-2 h-2 bg-white rounded-full opacity-30 float" style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-1/3 right-1/3 w-5 h-5 bg-primary rounded-full opacity-40 float" style="animation-delay: 0.5s;"></div>
+            <div class="absolute top-1/2 left-1/5 w-3 h-3 bg-research rounded-full opacity-35 float" style="animation-delay: 1.5s;"></div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
+    <section id="about" class="py-24 bg-white">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">About Me</h2>
-                <div class="w-24 h-1 bg-primary mx-auto"></div>
+                <h2 class="text-5xl font-bold text-gray-800 mb-4">About Me</h2>
+                <div class="w-32 h-1.5 bg-primary mx-auto"></div>
             </div>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="space-y-6">
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        I am a passionate mathematician and full stack developer with a strong foundation in Applied Mathematics 
-                        from the University of Rwanda. My expertise bridges the gap between theoretical mathematics and 
-                        practical technology solutions.
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        I am a data scientist with a strong mathematical foundation, currently pursuing my Master of Science 
+                        in Mathematical Sciences with a focus on Data Science at the African Institute for Mathematical Sciences 
+                        (AIMS) in Kigali, Rwanda.
                     </p>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        With proficiency in data analysis tools like Python, R, and Excel, I transform complex datasets 
-                        into actionable insights. My full stack development skills enable me to build comprehensive 
-                        web applications that solve real-world problems.
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        My work sits at the intersection of mathematical theory and practical application. With expertise in 
+                        statistical machine learning, big data analysis, and mathematical modeling, I transform complex datasets 
+                        into actionable insights that drive real-world impact.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        I am particularly interested in applying advanced machine learning techniques to challenges in developing 
+                        contexts, leveraging data science for social good, and contributing to the growing field of AI research 
+                        across Africa.
                     </p>
                     <div class="flex flex-wrap gap-4 mt-8">
                         <div class="flex items-center space-x-2">
                             <div class="w-3 h-3 bg-primary rounded-full"></div>
-                            <span class="text-gray-700">Problem Solving</span>
+                            <span class="text-gray-700 font-medium">Research-Driven</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <div class="w-3 h-3 bg-primary rounded-full"></div>
-                            <span class="text-gray-700">Data Analysis</span>
+                            <span class="text-gray-700 font-medium">Mathematically Rigorous</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <div class="w-3 h-3 bg-primary rounded-full"></div>
-                            <span class="text-gray-700">Web Development</span>
+                            <span class="text-gray-700 font-medium">Impact-Focused</span>
                         </div>
                     </div>
                 </div>
                 <div class="relative">
-                    <div class="bg-gradient-to-br from-primary to-secondary rounded-2xl p-8 text-white">
-                        <h3 class="text-2xl font-bold mb-4">What I Do</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                    <div class="bg-gradient-to-br from-primary via-secondary to-research rounded-2xl p-10 text-white shadow-2xl">
+                        <h3 class="text-3xl font-bold mb-6">What I Do</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Mathematical Modeling & Analysis</span>
+                                <span class="text-lg">Machine Learning Research & Development</span>
                             </li>
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Data Visualization & Insights</span>
+                                <span class="text-lg">Statistical Analysis & Inference</span>
                             </li>
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Full Stack Web Applications</span>
+                                <span class="text-lg">Data-Driven Mathematical Modeling</span>
                             </li>
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Statistical Analysis & Reporting</span>
+                                <span class="text-lg">Big Data Analytics & Visualization</span>
                             </li>
                         </ul>
                     </div>
@@ -274,19 +274,326 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-100">
+
+
+    <!-- Education Section -->
+<section id="education" class="py-24 academic-section">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-bold text-gray-800 mb-4">Education</h2>
+            <div class="w-32 h-1.5 bg-primary mx-auto"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto space-y-8">
+            <!-- AIMS Rwanda - Master's Degree -->
+            <div class="interactive-card bg-gradient-to-br from-research to-purple-900 rounded-2xl p-10 text-white shadow-2xl">
+                <div class="flex items-start mb-6">
+                    <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mr-6 flex-shrink-0 float">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.84L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.84l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                        </svg>
+                    </div>
+                    <div class="slide-in-left flex-1">
+                        <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                            <h3 class="text-3xl font-bold">Master of Science in Mathematical Sciences</h3>
+                            <span class="bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold">Currently Studying</span>
+                        </div>
+                        <p class="text-2xl opacity-95 mb-2">Data Science Track</p>
+                        <p class="text-xl opacity-90">African Institute for Mathematical Sciences (AIMS)</p>
+                        <p class="text-lg opacity-85">Kigali, Rwanda</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6 slide-in-up">
+                    <p class="text-lg opacity-95 leading-relaxed">
+                        Advanced graduate training in mathematical sciences with specialized focus on data science, 
+                        machine learning, and statistical computing. AIMS provides rigorous mathematical education 
+                        combined with cutting-edge research opportunities in AI and data science.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-8">
+                        <div class="slide-in-left">
+                            <h4 class="font-bold text-accent text-xl mb-4">Core Training Areas:</h4>
+                            <ul class="space-y-2 opacity-95">
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Machine Learning & AI</span>
+                                </li>
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Statistical Theory & Methods</span>
+                                </li>
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Data Science Fundamentals</span>
+                                </li>
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Scientific Computing</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="slide-in-right">
+                            <h4 class="font-bold text-accent text-xl mb-4">Research Focus:</h4>
+                            <ul class="space-y-2 opacity-95">
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Advanced ML Algorithms</span>
+                                </li>
+                               
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Data-Driven Solutions</span>
+                                </li>
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Real-World Applications</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- University of Rwanda - Bachelor's Degree -->
+            <div class="interactive-card bg-white rounded-2xl p-10 shadow-xl border-2 border-gray-200 hover:border-primary">
+                <div class="flex items-start mb-6">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mr-6 flex-shrink-0 float" style="animation-delay: 0.5s;">
+                        <svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.84L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.84l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                        </svg>
+                    </div>
+                    <div class="slide-in-left flex-1">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-2">Bachelor of Science in Applied Mathematics</h3>
+                        <p class="text-2xl text-gray-700 mb-2">University of Rwanda</p>
+                        <p class="text-lg text-gray-600">Kigali, Rwanda</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6 slide-in-up">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Comprehensive undergraduate education in applied mathematics, building a strong theoretical 
+                        foundation in mathematical analysis, statistics, and computational methods with emphasis on 
+                        practical applications to real-world problems.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-8">
+                        <div class="slide-in-left">
+                            <h4 class="font-bold text-primary text-xl mb-4">Mathematical Foundation:</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Mathematical Analysis</span>
+                                </li>
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Linear Algebra & Calculus</span>
+                                </li>
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Statistical Methods</span>
+                                </li>
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Differential Equations and Partial differential Equations</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="slide-in-right">
+                            <h4 class="font-bold text-primary text-xl mb-4">Applied Skills:</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Numerical Methods</span>
+                                </li>
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Optimization Research</span>
+                                </li>
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Computational Mathematics</span>
+                                </li>
+                                <li class="flex items-center space-x-2 transform hover:translate-x-2 transition-transform">
+                                    <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Problem Solving</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Research Interests Section -->
+    <section id="research" class="py-24 academic-section">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Technical Skills</h2>
-                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    A comprehensive toolkit spanning mathematics, data analysis, and full stack development
+                <h2 class="text-5xl font-bold text-gray-800 mb-4">Research Interests</h2>
+                <div class="w-32 h-1.5 bg-research mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Exploring the frontiers of machine learning, statistics, and data science with a focus on 
+                    theoretical foundations and real-world applications
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Primary Research Interest -->
+                <div class="md:col-span-2 interactive-card bg-gradient-to-br from-research to-purple-900 rounded-2xl p-10 text-white shadow-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mr-6 float">
+                            <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-bold mb-2">Machine Learning Research</h3>
+                            <p class="text-purple-200 text-lg">Primary Research Focus</p>
+                        </div>
+                    </div>
+                    <p class="text-lg opacity-95 leading-relaxed">
+                        Investigating novel approaches to machine learning algorithms, model interpretability, and the mathematical 
+                        foundations underlying modern AI systems. Particularly interested in developing methods that are both 
+                        theoretically sound and practically applicable to real-world challenges in emerging economies.
+                    </p>
+                </div>
+
+                <!-- Additional Research Areas -->
+                <div class="interactive-card bg-white rounded-xl p-8 shadow-lg border-2 border-blue-100 hover:border-primary">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Statistical Machine Learning</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Exploring probabilistic approaches to learning, Bayesian methods, and the statistical foundations 
+                        that enable robust, interpretable machine learning models.
+                    </p>
+                </div>
+
+                <div class="interactive-card bg-white rounded-xl p-8 shadow-lg border-2 border-green-100 hover:border-green-600">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Data-Driven Modeling</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Developing mathematical models informed by large-scale data to solve complex problems in 
+                        healthcare, economics, and social systems.
+                    </p>
+                </div>
+
+                <div class="interactive-card bg-white rounded-xl p-8 shadow-lg border-2 border-purple-100 hover:border-purple-600">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Applied Statistics</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Applying rigorous statistical methods to extract insights from data, test hypotheses, and 
+                        quantify uncertainty in decision-making processes.
+                    </p>
+                </div>
+
+                <div class="interactive-card bg-white rounded-xl p-8 shadow-lg border-2 border-orange-100 hover:border-orange-600">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">ML for Social Impact</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Leveraging machine learning and data science to address challenges in developing contexts, 
+                        focusing on applications that create tangible social value.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-200">
+                <h4 class="text-2xl font-bold text-gray-800 mb-4">Mathematical Foundations</h4>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    My research approach is grounded in rigorous mathematical thinking, combining theoretical insights from 
+                    optimization theory, probability theory, and computational mathematics with empirical validation through 
+                    extensive experimentation and data analysis.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-gray-800 mb-4">Technical Expertise</h2>
+                <div class="w-32 h-1.5 bg-primary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A comprehensive toolkit spanning machine learning, statistical computing, and data engineering
                 </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Data Analysis -->
+                <!-- Machine Learning -->
+                <div class="interactive-card bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg float">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Machine Learning</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="skill-badge text-blue-800 px-4 py-3 rounded-lg text-center font-semibold">Supervised & Unsupervised Learning</div>
+                        <div class="skill-badge text-blue-800 px-4 py-3 rounded-lg text-center font-semibold">Deep Learning</div>
+                        <div class="skill-badge text-blue-800 px-4 py-3 rounded-lg text-center font-semibold">Model Selection & Tuning</div>
+                        <div class="skill-badge text-blue-800 px-4 py-3 rounded-lg text-center font-semibold">Feature Engineering</div>
+                    </div>
+                </div>
+
+               <!-- Data Analysis -->
                 <div class="bg-white rounded-xl p-8 shadow-lg interactive-card skill-progress">
                     <div class="text-center mb-6">
                         <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 float">
@@ -300,102 +607,16 @@
                         <div class="skill-tag bg-blue-50 text-blue-800 px-4 py-2 rounded-full text-center font-medium transform hover:scale-105 hover:bg-blue-100">Python</div>
                         <div class="skill-tag bg-blue-50 text-blue-800 px-4 py-2 rounded-full text-center font-medium transform hover:scale-105 hover:bg-blue-100">R Programming</div>
                         <div class="skill-tag bg-blue-50 text-blue-800 px-4 py-2 rounded-full text-center font-medium transform hover:scale-105 hover:bg-blue-100">Excel</div>
-                        <div class="skill-tag bg-blue-50 text-blue-800 px-4 py-2 rounded-full text-center font-medium transform hover:scale-105 hover:bg-blue-100">Statistical Analysis</div>
-                    </div>
-                </div>
-
-                <!-- Mathematics -->
-                <div class="bg-white rounded-xl p-8 shadow-lg interactive-card skill-progress">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 float" style="animation-delay: 0.5s;">
-                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800">Mathematics</h3>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="skill-tag bg-purple-50 text-purple-800 px-4 py-2 rounded-full text-center font-medium transform hover:scale-105 hover:bg-purple-100">Applied Mathematics</div>
-                        <div class="skill-tag bg-purple-50 text-purple-800 px-4 py-2 rounded-full text-center font-medium transform hover:scale-105 hover:bg-purple-100">Mathematical Modeling</div>
-                        <div class="skill-tag bg-purple-50 text-purple-800 px-4 py-2 rounded-full text-center font-medium transform hover:scale-105 hover:bg-purple-100">Calculus</div>
-                        <div class="skill-tag bg-purple-50 text-purple-800 px-4 py-2 rounded-full text-center font-medium transform hover:scale-105 hover:bg-purple-100">Linear Algebra</div>
-                    </div>
-                </div>
-
-                <!-- Development -->
-                <div class="bg-white rounded-xl p-8 shadow-lg interactive-card skill-progress">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 float" style="animation-delay: 1s;">
-                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800">Development</h3>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="skill-tag bg-green-50 text-green-800 px-4 py-2 rounded-full text-center font-medium transform hover:scale-105 hover:bg-green-100">Full Stack Development</div>
-                        <div class="skill-tag bg-green-50 text-green-800 px-4 py-2 rounded-full text-center font-medium transform hover:scale-105 hover:bg-green-100">Web Applications</div>
-                        <div class="skill-tag bg-green-50 text-green-800 px-4 py-2 rounded-full text-center font-medium transform hover:scale-105 hover:bg-green-100">Database Design</div>
-                        <div class="skill-tag bg-green-50 text-green-800 px-4 py-2 rounded-full text-center font-medium transform hover:scale-105 hover:bg-green-100">API Development</div>
-                    </div>
-                </div>
-            
-                 
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Education</h2>
-                <div class="w-24 h-1 bg-primary mx-auto"></div>
-            </div>
-            
-            <div class="max-w-3xl mx-auto">
-                <div class="bg-gradient-to-br from-primary to-secondary rounded-2xl p-8 text-white shadow-2xl interactive-card">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mr-6 float">
-                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.84L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.84l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
-                            </svg>
-                        </div>
-                        <div class="slide-in-left">
-                            <h3 class="text-2xl font-bold">Bachelor's Degree in Applied Mathematics</h3>
-                            <p class="text-xl opacity-90">University of Rwanda</p>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4 slide-in-up">
-                        <p class="text-lg opacity-95">
-                            Comprehensive study of mathematical principles with practical applications in real-world scenarios.
-                        </p>
-                        
-                        <div class="grid md:grid-cols-2 gap-6 mt-8">
-                            <div class="slide-in-left">
-                                <h4 class="font-semibold text-accent mb-3 pulse-slow">Key Areas of Study:</h4>
-                                <ul class="space-y-2 opacity-90">
-                                    <li class="transform hover:translate-x-2 transition-transform">• Mathematical Analysis</li>
-                                    <li class="transform hover:translate-x-2 transition-transform">• Statistical Methods</li>
-                                    <li class="transform hover:translate-x-2 transition-transform">• Numerical Methods</li>
-                                    <li class="transform hover:translate-x-2 transition-transform">• Optimization Theory</li>
-                                </ul>
-                            </div>
-                            <div class="slide-in-right">
-                                <h4 class="font-semibold text-accent mb-3 pulse-slow">Applications:</h4>
-                                <ul class="space-y-2 opacity-90">
-                                    <li class="transform hover:translate-x-2 transition-transform">• Data Modeling</li>
-                                    <li class="transform hover:translate-x-2 transition-transform">• Problem Solving</li>
-                                    <li class="transform hover:translate-x-2 transition-transform">• Research Methods</li>
-                                    <li class="transform hover:translate-x-2 transition-transform">• Computational Mathematics</li>
-                                </ul>
-                            </div>
-                        </div>
+                        <div class="skill-tag bg-blue-50 text-blue-800 px-4 py-2 rounded-full text-center font-medium transform hover:scale-105 hover:bg-blue-100">Julia</div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
+
+
+
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-900 text-white">
@@ -428,7 +649,23 @@
                             </div>
                             <div>
                                 <p class="text-gray-400">Email</p>
-                                <p class="text-white font-semibold">usengimanarichard531@gmail.com</p>
+                                <a href="mailto:richard.usengimana@aims.ac.rw" class="text-white font-semibold hover:text-accent transition-colors">
+                                    richard.usengimana@aims.ac.rw
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">LinkedIn</p>
+                                <a href="linkedin.com/in/richard-usengimana-ab7a67396" target="_blank" class="text-white font-semibold hover:text-accent transition-colors">
+                                    linkedin.com/in/richard-usengimana-ab7a67396
+                                </a>
                             </div>
                         </div>
                         
@@ -576,4 +813,4 @@
         });
     </script>
 </body>
-</html>
+</html>           
